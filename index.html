@@ -1,16 +1,41 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head >
 	<title>Sandeep Kumar</title>
 	<link rel='shortcut icon' type='image/ico' href='images/favicon.ico'/>
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
-   
+	<link rel="stylesheet" href="lib/angular-material.min.css">
+   	<!-- /*<style type="text/css" src="lib/bootstrap.css"></style>*/ -->
+   	<!-- /*<style type="text/css" src="lib/bootstrap-theme.css"></style>*/ -->
 </head>
-<body>
-	
-<h1>Sandeep Kumar</h1>
-<h2>Github blog-note</h2>
+<body ng-app="blogNote">
 
+	<h1>{{"Sandeep " + "Kumar"}}</h1>
+	<h2>Github blog-note</h2>
+<div ng-controller="AppCtrl">
+	<section layout="row" layout-sm="column" layout-align="center center">
+        <md-button class="md-fab" aria-label="Eat cake">
+            <md-icon md-svg-src="images/ic_people_24px.svg"></md-icon>
+        </md-button>
+      <md-button class="md-fab md-primary" aria-label="Use Android">
+        <md-icon md-svg-src="images/ic_people_24px.svg"></md-icon>
+      </md-button>
+        <md-button class="md-fab md-primary md-hue-2" aria-label="Profile">
+            <md-icon md-svg-src="images/ic_people_24px.svg"></md-icon>
+        </md-button>
+    </section>
+</div>
 
+	<!-- // <script type="text/javascript" src="lib/jquery.min.js"></script> -->
+	<script type="text/javascript" src="lib/angular.js"></script>
+	<!-- // <script type="text/javascript" src="lib/bootstrap.min.js"></script> -->
+	<!-- // <script type="text/javascript" src="lib/ui-bootstrap.min.js"></script> -->
+	<!-- // <script type="text/javascript" src="lib/ui-bootstrap-tpls.min.js"></script> -->
+	  
+<script src="lib/angular-aria.min.js"></script>
+<script type="text/javascript" src="lib/hammer.min.js"></script>
+<script src="lib/angular-animate.min.js"></script>
+<script src="lib/angular-material.min.js"></script>
+<script type="text/javascript" src="scripts/app.js"></script>	 
 </body>
 </html>

@@ -1,0 +1,11 @@
+node_modules
+dist
+.tmp
+.sass-cache
+bower_components
+bootstrap.css
+bootstrap-theme.css
+jquery.min.js
+bootstrap.min.js
+ui-bootstrap.min.js
+ui-bootstrap-tpls.min.js
