@@ -1,0 +1,59 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="bower_components/paper-fab/paper-fab.html">
+<link rel="import" href="bower_components/core-icons/core-icons.html">
+
+<polymer-element name="about-me" layout vertical center>
+	<template>
+		<style type="text/css">
+			/*Later use*/
+			.hiLight{
+				color: #00bfa5;
+			}
+			.hiLight1{
+				color: #2e7d32;
+				text-decoration: none;
+			}
+		</style>
+		<template bind="{{data as data}}">
+			<h1>{{data.name}}</h1>
+			<div class="container">
+				<h1 flex>Hi, I am <span class="hiLight">Sandeep Kumar H R</span></h1>
+				
+				<h2 flex>My intrests are in <span class="hiLight">Web Technologies</span> and <span class="hiLight"> Information Security</span>.</h2><hr>
+				<h3 flex>I am a <span class="hiLight">Developer</span>, who likes to learn new <span class="hiLight">Technologies</span> and build some things out of that while <span class="hiLight">Learning</span>.</h3>
+				<h3 flex> The Main <span class="hiLight">Idea</span> was to write down what i kept learning, along the way <span class="hiLight">Polymer </span>is what i chose to build the blog-note with.</h3>
+				<h4 flex> Here i will be writing the <span class="hiLight">essentials</span>, hope these will be helpfull to other <span class="hiLight">learners</span> like me. </h4>
+				<hr>
+				<span class="hiLight1">
+					<paper-button raised onClick="github()" id="github"> github </paper-button>
+				</span>
+				<span class="hiLight1">
+					<paper-button raised onClick="linkedin()" id="linkedin"> linked-in </paper-button>
+				</span>
+			</div>
+				
+		</template>
+
+
+	</template>
+	<script type="text/javascript">
+		Polymer("about-me",{
+			ready:function(){
+				// this.info1 = [
+				// 	{name: "Sandeep Kumar H R"},
+				// 	{intrest: "Web Technologies and Information Security"},
+				// ];
+
+				var data = { name: "sandeep"};
+			}
+		});
+
+		var github = function(which){
+			window.location = "http://www.github.com/srSandeepKumar";
+		};
+
+		var linkedin = function(){
+			window.location = "https://in.linkedin.com/in/infosandeep";
+		};
+	</script>
+</polymer-element>

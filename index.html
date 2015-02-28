@@ -1,41 +1,108 @@
-<!DOCTYPE html>
 <html>
-<head >
+<head>
 	<title>Sandeep Kumar</title>
-	<link rel='shortcut icon' type='image/ico' href='images/favicon.ico'/>
-	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
-	<link rel="stylesheet" href="lib/angular-material.min.css">
-   	<!-- /*<style type="text/css" src="lib/bootstrap.css"></style>*/ -->
-   	<!-- /*<style type="text/css" src="lib/bootstrap-theme.css"></style>*/ -->
+	<link rel='shortcut icon' type='image/ico' href='favicon.ico'/>
+	<!-- Load platform support before the code touches the DOM -->
+	<script type="text/javascript" src="bower_components/webcomponentsjs/webcomponents.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/arvo.css">
+	
+	<link rel="import" href="bower_components/core-tooltip/core-tooltip.html">
+	<link rel="import" href="bower_components/core-header-panel/core-header-panel.html">
+	<link rel="import" href="bower_components/core-scroll-header-panel/core-scroll-header-panel.html">
+	<link rel="import" href="bower_components/core-toolbar/core-toolbar.html">
+	<link rel="import" href="bower_components/core-icons/core-icons.html">
+	<link rel="import" href="bower_components/core-pages/core-pages.html">
+
+	<link rel="import" href="bower_components/core-animated-pages/core-animated-pages.html">
+	<link rel="import" href="bower_components/paper-elements/paper-elements.html">
+	<link rel="import" href="bower_components/paper-dialog/paper-dialog.html">
+
+	<link rel="import" href="elements/hello-world.html">
+	<link rel="import" href="elements/about-me.html">
 </head>
-<body ng-app="blogNote">
+<body fullbleed layout vertical>
+	<style>
+		core-toolbar{
+			background: #42A5f5;
+			/*background: #009688; */
+			height: 6em ;
+			color: #FFF;
+		}	
 
-	<h1>{{"Sandeep " + "Kumar"}}</h1>
-	<h2>Github blog-note</h2>
-<div ng-controller="AppCtrl">
-	<section layout="row" layout-sm="column" layout-align="center center">
-        <md-button class="md-fab" aria-label="Eat cake">
-            <md-icon md-svg-src="images/ic_people_24px.svg"></md-icon>
-        </md-button>
-      <md-button class="md-fab md-primary" aria-label="Use Android">
-        <md-icon md-svg-src="images/ic_people_24px.svg"></md-icon>
-      </md-button>
-        <md-button class="md-fab md-primary md-hue-2" aria-label="Profile">
-            <md-icon md-svg-src="images/ic_people_24px.svg"></md-icon>
-        </md-button>
-    </section>
-</div>
+		body{
+			font-family:'Arvo', serif;
+		}
 
-	<!-- // <script type="text/javascript" src="lib/jquery.min.js"></script> -->
-	<script type="text/javascript" src="lib/angular.js"></script>
-	<!-- // <script type="text/javascript" src="lib/bootstrap.min.js"></script> -->
-	<!-- // <script type="text/javascript" src="lib/ui-bootstrap.min.js"></script> -->
-	<!-- // <script type="text/javascript" src="lib/ui-bootstrap-tpls.min.js"></script> -->
-	  
-<script src="lib/angular-aria.min.js"></script>
-<script type="text/javascript" src="lib/hammer.min.js"></script>
-<script src="lib/angular-animate.min.js"></script>
-<script src="lib/angular-material.min.js"></script>
-<script type="text/javascript" src="scripts/app.js"></script>	 
+		.HeadName{
+			font-size: 2em;
+			position: relative;
+			top: 1em;
+		}
+
+		.tab{
+			background: #009688;
+			color:white;
+		}
+
+		.about{
+			/*background: #4caf50;*/
+			background: url("img/sk1.png");
+		    color: white;
+		    display: flex;
+			top: 8.5em;
+			left: 50em;
+			width: 7em;
+			height: 7em;
+			z-index: 1;
+		}
+
+		.subHead{
+			font-size: 1em !important;
+		}
+
+		@media only screen and (min-device-width : 320px) and (max-device-width : 568px) { 
+
+		}
+	</style>
+	<core-scroll-header-panel flex>
+		<core-toolbar horizontal justified layout wrap>	
+		
+			<div class="HeadName"> Sandeep Kumar</div>
+			<div class="middle subHead">Blog-Note</div>
+		
+			<!-- <paper-fab raised class="about" flex > 
+				<paper-ripple fit> </paper-ripple>
+			</paper-fab> -->	
+		</core-toolbar>
+		<paper-tabs selected="0" class="tab">
+			<paper-tab>About Me</paper-tab>
+			<paper-tab>JavaScript</paper-tab>
+			<paper-tab>AngularJS</paper-tab>
+			<paper-tab>NodeJS</paper-tab>
+			<paper-tab>PHP</paper-tab>
+			<paper-tab>General</paper-tab>
+
+
+		</paper-tabs>
+
+		<core-animated-pages flex>
+		  	<!-- <div>About Me</div> -->
+		  	<about-me raised></about-me>
+		  	<hello-world></hello-world>	
+		  	<h2>Note on angularJS in progress</h2>
+		  	<h2>Note on NodeJS in progress</h2>
+		  	<h2>Note on PHP in progress</h2>
+		  	<h2>Note on General in progress</h2>
+		</core-animated-pages>
+
+		<script>
+		    var pages = document.querySelector('core-animated-pages');
+		    var tabs = document.querySelector('paper-tabs');
+		    tabs.addEventListener('core-select', function() {
+			    pages.selected = tabs.selected;
+		    });
+  </script>
+	</core-scroll-header-panel>
+
 </body>
 </html>
