@@ -22,7 +22,7 @@
 </head>
 <body fullbleed layout vertical>
 	<style>
-		core-toolbar{
+		.toolBar{
 			background: #42A5f5;
 			/*background: #009688; */
 			height: 6em ;
@@ -42,6 +42,10 @@
 		.tab{
 			background: #009688;
 			color:white;
+		}
+
+		.paperToolbar{
+			background: #009688;
 		}
 
 		.about{
@@ -65,7 +69,7 @@
 		}
 	</style>
 	<core-scroll-header-panel flex>
-		<core-toolbar horizontal justified layout wrap>	
+		<core-toolbar horizontal justified layout wrap class="toolBar">	
 		
 			<div class="HeadName"> Sandeep Kumar</div>
 			<div class="middle subHead">Blog-Note</div>
@@ -74,25 +78,26 @@
 				<paper-ripple fit> </paper-ripple>
 			</paper-fab> -->	
 		</core-toolbar>
-		<paper-tabs selected="0" class="tab">
-			<paper-tab>About Me</paper-tab>
-			<paper-tab>JavaScript</paper-tab>
-			<paper-tab>AngularJS</paper-tab>
-			<paper-tab>NodeJS</paper-tab>
-			<paper-tab>PHP</paper-tab>
-			<paper-tab>General</paper-tab>
 
+		<core-toolbar class="paperToolbar">	
+			<paper-tabs selected="0" class="tab" horizontal around-justified layout wrap flex>
+				<paper-tab>About Me</paper-tab>
+				<paper-tab>JavaScript</paper-tab>
+				<paper-tab>AngularJS</paper-tab>
+				<paper-tab>NodeJS</paper-tab>
+				<paper-tab>PHP</paper-tab>
+				<paper-tab>General</paper-tab>
+			</paper-tabs>
+		</core-toolbar>
 
-		</paper-tabs>
-
-		<core-animated-pages flex>
+		<core-animated-pages flex style="top: 70px;">
 		  	<!-- <div>About Me</div> -->
 		  	<about-me raised></about-me>
 		  	<hello-world></hello-world>	
-		  	<h2>Note on angularJS in progress</h2>
-		  	<h2>Note on NodeJS in progress</h2>
-		  	<h2>Note on PHP in progress</h2>
-		  	<h2>Note on General in progress</h2>
+		  	<h2>Note on <u>angularJS</u> in progress</h2>
+		  	<h2>Note on <u>NodeJS</u> in progress</h2>
+		  	<h2>Note on <u>PHP</u> in progress</h2>
+		  	<h2>Note on <u>General</u> in progress</h2>
 		</core-animated-pages>
 
 		<script>
