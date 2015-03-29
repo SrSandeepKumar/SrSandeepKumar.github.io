@@ -1,0 +1,15 @@
+td{
+	width: 20px;
+	height: 20px;
+	background: #eee;
+}
+
+table{
+	cursor: default; 
+}
+
+.valid{
+	background: #00BFA5;
+}
+
+/**/
