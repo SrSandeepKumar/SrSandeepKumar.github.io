@@ -25,7 +25,6 @@
 	<style>
 		.toolBar{
 			background: #42A5f5;
-			/*background: #009688; */
 			height: 6em ;
 			color: #FFF;
 			font-family:'Arvo', serif;
@@ -74,7 +73,7 @@
 	<core-scroll-header-panel flex>
 		<core-toolbar horizontal justified layout wrap class="toolBar">
 
-			<div class="HeadName"> Sandeep Kumar</div>
+			<div class="HeadName"> Sandeep Kumar </div>
 			<!-- <div class="middle subHead">Blog-Note</div> -->
 
 			<!-- <paper-fab raised class="about" flex >
@@ -85,8 +84,8 @@
 		<core-toolbar class="paperToolbar">
 			<paper-tabs selected="0" class="tab" horizontal around-justified layout wrap flex>
 				<paper-tab>About Me</paper-tab>
-				<!-- <paper-tab>JavaScript</paper-tab>
-				<paper-tab>AngularJS</paper-tab>
+				<paper-tab> Links </paper-tab>
+				<!-- <paper-tab>AngularJS</paper-tab>
 				<paper-tab>NodeJS</paper-tab>
 				<paper-tab>PHP</paper-tab>
 				<paper-tab>General</paper-tab> -->
@@ -107,6 +106,7 @@
 		    var pages = document.querySelector('core-animated-pages');
 		    var tabs = document.querySelector('paper-tabs');
 		    tabs.addEventListener('core-select', function() {
+				debugger;
 			    pages.selected = tabs.selected;
 		    });
   </script>
