@@ -72,34 +72,19 @@
 	</style>
 	<core-scroll-header-panel flex>
 		<core-toolbar horizontal justified layout wrap class="toolBar">
-
 			<div class="HeadName"> Sandeep Kumar </div>
-			<!-- <div class="middle subHead">Blog-Note</div> -->
-
-			<!-- <paper-fab raised class="about" flex >
-				<paper-ripple fit> </paper-ripple>
-			</paper-fab> -->
 		</core-toolbar>
 
 		<core-toolbar class="paperToolbar">
 			<paper-tabs selected="0" class="tab" horizontal around-justified layout wrap flex>
 				<paper-tab>About Me</paper-tab>
 				<paper-tab> Links </paper-tab>
-				<!-- <paper-tab>AngularJS</paper-tab>
-				<paper-tab>NodeJS</paper-tab>
-				<paper-tab>PHP</paper-tab>
-				<paper-tab>General</paper-tab> -->
 			</paper-tabs>
 		</core-toolbar>
 
 		<core-animated-pages flex style="top: 70px;">
-		  	<!-- <div>About Me</div> -->
 		  	<about-me raised></about-me>
-		  	<links></links>
-		  	<h2>Note on <u>angularJS</u> in progress</h2>
-		  	<h2>Note on <u>NodeJS</u> in progress</h2>
-		  	<h2>Note on <u>PHP</u> in progress</h2>
-		  	<h2>Note on <u>General</u> in progress</h2>
+		  	<work-links></work-links>
 		</core-animated-pages>
 
 		<script>
@@ -109,7 +94,7 @@
 				debugger;
 			    pages.selected = tabs.selected;
 		    });
-  </script>
+  		</script>
 	</core-scroll-header-panel>
 
 </body>
