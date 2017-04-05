@@ -1,0 +1,61 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/paper-shadow/paper-shadow.html">
+
+<polymer-element name="hello-world" attributes="name"> 
+<!-- noscript tells this particular element is not using any javascript  -->
+	<template>	
+		<style>
+			/* Some properties */
+			.container{
+				  position: relative;
+				  padding: 20px;
+				  width: 1120px;
+				  left: 100px;
+				  top: 20px;
+			}
+			.header1{
+				text-align: center;
+				height: 35px;
+				background: #9ccc65;
+			}
+			paper-button{
+				color: white;
+			}
+		</style>
+			<template repeat="{{name in names}}" >
+				<div flex wrap class="container">
+					<paper-shadow z="1" flex>
+					<div horizontal layout class="header1">
+						<header vertical center-justified layout flex>{{name.title}} </header>
+						<paper-button>
+                            <a href={{ name.link }}> Explore </a>
+                        </paper-button>
+					</div>
+						<div > hello {{ name.name }} <br> Description {{name.Desc}}</div>
+					</paper-shadow>	
+				</div>
+			</template>
+	</template>
+	<script>
+		Polymer('links',{
+			ready:function(){
+				this.names = [
+					{	title:"Service Workers",
+						name: "Service Workers - Code" , 
+                        link: 'http://srsandeepkumar.github.io/serviceworkers.html',
+						Desc: "Service Workers slides which has been used in screen cast on my youtube channel."
+					},{	title:"Calendar",
+						name: "Web application",
+                        link: 'http://srsandeepkumar.github.io/Calendar.html',
+						Desc: "A Calendar web application."
+					},
+					{	title:"Conway's Game of Life",
+						name: "sandeep" , 
+                        link: 'http://srsandeepkumar.github.io/GameOfLife.html',
+						Desc: "Conway's Game of Life implementation in javascript."
+					}
+				];
+			}
+		});
+	</script>
+</polymer-element>
