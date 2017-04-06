@@ -1,0 +1,101 @@
+<html>
+<head>
+	<title>Sandeep Kumar</title>
+	<link rel='shortcut icon' type='image/ico' href='favicon.ico'/>
+	<!-- Load platform support before the code touches the DOM -->
+	<script type="text/javascript" src="bower_components/webcomponentsjs/webcomponents.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/arvo.css">
+	<link rel="stylesheet" type="text/css" href="css/varelaRound.css">
+
+	<link rel="import" href="bower_components/core-tooltip/core-tooltip.html">
+	<link rel="import" href="bower_components/core-header-panel/core-header-panel.html">
+	<link rel="import" href="bower_components/core-scroll-header-panel/core-scroll-header-panel.html">
+	<link rel="import" href="bower_components/core-toolbar/core-toolbar.html">
+	<link rel="import" href="bower_components/core-icons/core-icons.html">
+	<link rel="import" href="bower_components/core-pages/core-pages.html">
+
+	<link rel="import" href="bower_components/core-animated-pages/core-animated-pages.html">
+	<link rel="import" href="bower_components/paper-elements/paper-elements.html">
+	<link rel="import" href="bower_components/paper-dialog/paper-dialog.html">
+
+	<link rel="import" href="elements/links.html">
+	<link rel="import" href="elements/about-me.html">
+</head>
+<body fullbleed layout vertical>
+	<style>
+		.toolBar{
+			background: #42A5f5;
+			height: 6em ;
+			color: #FFF;
+			font-family:'Arvo', serif;
+		}
+
+		body{
+			font-family: 'Varela Round', sans-serif;
+		}
+
+		.HeadName{
+			font-size: 2em;
+			position: relative;
+			top: 1em;
+		}
+
+		.tab{
+			background: #009688;
+			color:white;
+		}
+
+		.paperToolbar{
+			background: #009688;
+			height: 56px;
+		}
+
+		.about{
+			/*background: #4caf50;*/
+			background: url("img/sk1.png");
+		    color: white;
+		    display: flex;
+			top: 8.5em;
+			left: 50em;
+			width: 7em;
+			height: 7em;
+			z-index: 1;
+		}
+
+		.subHead{
+			font-size: 1em !important;
+		}
+
+		@media only screen and (min-device-width : 320px) and (max-device-width : 568px) {
+
+		}
+	</style>
+	<core-scroll-header-panel flex>
+		<core-toolbar horizontal justified layout wrap class="toolBar">
+			<div class="HeadName"> Sandeep Kumar </div>
+		</core-toolbar>
+
+		<core-toolbar class="paperToolbar">
+			<paper-tabs selected="0" class="tab" horizontal around-justified layout wrap flex>
+				<paper-tab>About Me</paper-tab>
+				<paper-tab> Links </paper-tab>
+			</paper-tabs>
+		</core-toolbar>
+
+		<core-animated-pages flex style="top: 70px;">
+		  	<about-me raised></about-me>
+		  	<work-links></work-links>
+		</core-animated-pages>
+
+		<script>
+		    var pages = document.querySelector('core-animated-pages');
+		    var tabs = document.querySelector('paper-tabs');
+		    tabs.addEventListener('core-select', function() {
+				debugger;
+			    pages.selected = tabs.selected;
+		    });
+  		</script>
+	</core-scroll-header-panel>
+
+</body>
+</html>

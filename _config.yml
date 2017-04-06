@@ -1,1 +1,11 @@
-theme: jekyll-theme-architect
+# Setup
+name:         Sandeep Kumar
+tagline:      Software Engineer - Coding Web
+baseurl:      ""
+
+# Gems
+gems:
+  - jekyll-paginate
+
+#Others
+markdown: kramdown

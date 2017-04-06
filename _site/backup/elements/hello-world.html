@@ -1,0 +1,81 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/paper-shadow/paper-shadow.html">
+
+<polymer-element name="hello-world" attributes="name"> 
+<!-- noscript tells this particular element is not using any javascript  -->
+	<template>	
+		<style>
+			/* Some properties */
+			.container{
+				  position: relative;
+				  padding: 20px;
+				  width: 1120px;
+				  left: 100px;
+				  top: 20px;
+			}
+			.header1{
+				text-align: center;
+				height: 35px;
+				background: #9ccc65;
+			}
+			paper-button{
+				color: white;
+			}
+		</style>
+			<template repeat="{{name in names}}" >
+				<div flex wrap class="container">
+					<paper-shadow z="1" flex>
+					<div horizontal layout class="header1">
+						<header vertical center-justified layout flex>{{name.title}} </header>
+						<paper-button> Read </paper-button>
+					</div>
+						<div > hello {{ name.name }} <br> Description {{name.Desc}}</div>
+					</paper-shadow>	
+				</div>
+			</template>
+	</template>
+	<script>
+		Polymer('hello-world',{
+			ready:function(){
+				this.names = [
+					{	title:"Object Oriented Javascript",
+						name: "sandeep" , 
+						Desc: "Polymer supports two-way data binding. Data binding extends HTML and the DOM APIs to support a sensible separation between the UI (DOM) of an application and its underlying data (model). Updates to the model are reflected in the DOM and user input into the DOM is immediately assigned to the model."
+					},
+					{	title:"Object Oriented Javascript",
+						name: "sandeep" , 
+						Desc: "Polymer supports two-way data binding. Data binding extends HTML and the DOM APIs to support a sensible separation between the UI (DOM) of an application and its underlying data (model). Updates to the model are reflected in the DOM and user input into the DOM is immediately assigned to the model."
+					},
+					{	title:"Object Oriented Javascript",
+						name: "sandeep" , 
+						Desc: "Polymer supports two-way data binding. Data binding extends HTML and the DOM APIs to support a sensible separation between the UI (DOM) of an application and its underlying data (model). Updates to the model are reflected in the DOM and user input into the DOM is immediately assigned to the model."
+					},
+					{	title:"Object Oriented Javascript",
+						name: "sandeep" , 
+						Desc: "Polymer supports two-way data binding. Data binding extends HTML and the DOM APIs to support a sensible separation between the UI (DOM) of an application and its underlying data (model). Updates to the model are reflected in the DOM and user input into the DOM is immediately assigned to the model."
+					},
+					{	title:"Object Oriented Javascript",
+						name: "sandeep" , 
+						Desc: "Polymer supports two-way data binding. Data binding extends HTML and the DOM APIs to support a sensible separation between the UI (DOM) of an application and its underlying data (model). Updates to the model are reflected in the DOM and user input into the DOM is immediately assigned to the model."
+					},
+					{	title:"Object Oriented Javascript",
+						name: "sandeep" , 
+						Desc: "Polymer supports two-way data binding. Data binding extends HTML and the DOM APIs to support a sensible separation between the UI (DOM) of an application and its underlying data (model). Updates to the model are reflected in the DOM and user input into the DOM is immediately assigned to the model."
+					},
+					{	title:"Object Oriented Javascript",
+						name: "sandeep" , 
+						Desc: "Polymer supports two-way data binding. Data binding extends HTML and the DOM APIs to support a sensible separation between the UI (DOM) of an application and its underlying data (model). Updates to the model are reflected in the DOM and user input into the DOM is immediately assigned to the model."
+					},
+					{	title:"Object Oriented Javascript",
+						name: "sandeep" , 
+						Desc: "Polymer supports two-way data binding. Data binding extends HTML and the DOM APIs to support a sensible separation between the UI (DOM) of an application and its underlying data (model). Updates to the model are reflected in the DOM and user input into the DOM is immediately assigned to the model."
+					},
+					{	title:"Object Oriented Javascript",
+						name: "sandeep" , 
+						Desc: "Polymer supports two-way data binding. Data binding extends HTML and the DOM APIs to support a sensible separation between the UI (DOM) of an application and its underlying data (model). Updates to the model are reflected in the DOM and user input into the DOM is immediately assigned to the model."
+					}
+				];
+			}
+		});
+	</script>
+</polymer-element>
