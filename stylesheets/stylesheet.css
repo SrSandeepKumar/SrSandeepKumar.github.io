@@ -865,6 +865,21 @@ dl dd {
   }
 }
 
+.socialIcons {
+  display: block;
+  margin: auto;
+  width: 50px;
+}
+
+.userName {
+  font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
+  color: black;
+  font-size: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #c0c0c0;
+  text-align: center;
+}
+
 @media only screen and (max-width: 780px) {
   .avatar {
     display: none;
