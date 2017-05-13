@@ -865,6 +865,17 @@ dl dd {
   }
 }
 
+.resume {
+  text-decoration: none;
+  color: inherit;
+}
+
+.resume:after {
+  content: '  <- (Tap)';
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
 .socialIcons {
   display: block;
   margin: auto;

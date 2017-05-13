@@ -236,6 +236,10 @@ footer a {
   text-align: center;
 }
 
+#sidebar {
+  display: none;
+}
+
 .clearfix {display: inline-block;}
 * html .clearfix {height: 1%;}
 .clearfix {display: block;}
