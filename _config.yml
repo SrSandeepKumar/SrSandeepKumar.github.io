@@ -1,7 +1,21 @@
 # Setup
-name:         Sandeep Kumar H R
-tagline:      Software Engineer - Coding Web
-baseurl:      ""
+name: KnighTechie.
+tagline: Software Engineer - Coding Web.
+baseurl: ""
+description: Tech Enthusiast.<br/> <span> Trying to contribute back to community.</span><br/> <span>For the Love of Code.</span>
+social: [{
+  link: "https://github.com/srsandeepkumar",
+  icon: "https://res.cloudinary.com/djgnze1er/image/upload/v1491932773/GitHub_Filled-500_sl3iek.png"
+}, {
+  link: "https://www.linkedin.com/in/infosandeep/",
+  icon: "https://res.cloudinary.com/djgnze1er/image/upload/v1491932786/LinkedIn-528_kul9pm.png"
+}, {
+  link: "https://twitter.com/SrSandeepKumar",
+  icon: "https://res.cloudinary.com/djgnze1er/image/upload/v1491932768/Twitter-528_iun6md.png"
+}, {
+  link: "https://www.youtube.com/channel/UC8aSVykuSWwTBX74lQsqyGw",
+  icon: "https://res.cloudinary.com/djgnze1er/image/upload/v1491932765/YouTube_2-528_lyg6av.png"
+}]
 
 # Gems
 gems:

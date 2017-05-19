@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "Service Workers"
-date:   2017-04-06 15:40:56
-categories: Progressive-Web-Applications
+title:  "TODO app in Vanilla JS"
+date:   2017-05-18 00:00:00
+categories: general
 ---
 
 I am just getting started with documentation - i'll be updating this post soon.
