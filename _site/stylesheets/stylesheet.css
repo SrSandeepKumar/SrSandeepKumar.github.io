@@ -449,8 +449,7 @@ a:hover {
 
 header {
   padding: 20px 0px 20px 0px;
-  font-family: 'Source Sans Pro', sans-serif; /* 1 */
-  /*font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;*/
+  font-family: 'Source Sans Pro', 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
   background: #2e7bcf url(../images/header-bg.jpg) 0 0 repeat-x;
   border-bottom: solid 1px #275da1;
 }
@@ -489,6 +488,7 @@ header h2 {
   position: relative;
   width: 940px;
   margin: 0 auto;
+  font-family: 'Source Sans Pro', 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
 }
 
 #content-wrapper {
@@ -529,7 +529,7 @@ a.button {
   height: 58px;
   padding-top: 22px;
   padding-left: 68px;
-  font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
+  font-family: 'Source Sans Pro', 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
   font-size: 23px;
   line-height: 1.2;
   color: #fff;
@@ -622,7 +622,7 @@ form {
 #main-content h1 {
   margin-top: 0;
   margin-bottom: 0;
-  font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
+  font-family: 'Source Sans Pro', 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
   font-size: 2.8em;
   font-weight: normal;
   color: #474747;
@@ -639,7 +639,7 @@ form {
 
 #main-content h2 {
   margin-bottom: 8px;
-  font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
+  font-family: 'Source Sans Pro', 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
   font-size: 22px;
   font-weight: bold;
   color: #474747;
@@ -655,7 +655,7 @@ form {
 #main-content h3 {
   margin-top: 24px;
   margin-bottom: 8px;
-  font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
+  font-family: 'Source Sans Pro', 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
   font-size: 18px;
   font-weight: bold;
   color: #474747;
@@ -671,7 +671,7 @@ form {
 
 #main-content h4 {
   margin-bottom: 8px;
-  font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
+  font-family: 'Source Sans Pro', 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
   font-size: 15px;
   font-weight: bold;
   color: #474747;
@@ -687,7 +687,7 @@ h4:before {
 
 #main-content h5 {
   margin-bottom: 8px;
-  font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
+  font-family: 'Source Sans Pro', 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
   font-size: 14px;
   color: #474747;
   text-indent: 3px;
@@ -701,7 +701,7 @@ h5:before {
 
 #main-content h6 {
   margin-bottom: 8px;
-  font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
+  font-family: 'Source Sans Pro', 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
   font-size: .8em;
   color: #474747;
   text-indent: 3px;
@@ -804,6 +804,7 @@ dl dd {
   }
   header {
     padding: 20px 0;
+    height: 150px;
   }
   header .inner {
     position: relative;
@@ -812,10 +813,12 @@ dl dd {
     width: 100%;
   }
   header h1 {
-    font-size: 48px;
+    /*font-size: 48px;*/
+    font-size: 40px;
   }
   header h2 {
-    font-size: 24px;
+    /*font-size: 24px;*/
+    font-size: 17px;
   }
   header a.button {
     position: relative;
@@ -876,14 +879,58 @@ dl dd {
   letter-spacing: 2px;
 }
 
+@keyframes rotate {
+  0% {
+    border-top-color: #4CAF50;
+    border-right-color: #FFEB3B;
+    border-bottom-color: #FF9800;
+    border-left-color: #F44336;
+  }
+  40% {
+    border-right-color: #4CAF50;
+    border-bottom-color: #FFEB3B;
+    border-left-color: #FF9800;
+    border-top-color: #F44336;
+  }
+  80% {
+    border-bottom-color: #4CAF50;
+    border-left-color: #FFEB3B;
+    border-top-color: #FF9800;
+    border-right-color: #F44336;
+  }
+  100% {
+    border-left-color: #4CAF50;
+    border-top-color: #FFEB3B;
+    border-right-color: #FF9800;
+    border-bottom-color: #F44336;
+  }
+}
+
 .socialLinksContainer {
   display: flex;
   justify-content: flex-end;
+  height: 40px;
+  margin: 0px 10px;
 }
 
 .socialLinksContainer a {
-  margin: 0px 10px;
+  margin: 0px 5px;
+  padding: 5px;
   border-bottom: 1px solid #42A5F5;
+  animation: rotate 5s infinite alternate;
+  -webkit-animation: rotate 5s infinite alternate;
+}
+
+.socialLinksContainer a:hover {
+  border-top: 1px solid;
+  border-right: 1px solid;
+  border-bottom: 1px solid;
+  border-left: 1px solid;
+  animation: rotate 2s infinite alternate;
+  -webkit-animation: rotate 2s infinite alternate;
+  border-radius: 40px;
+  padding: 5px;
+  transform: scale(1.3);
 }
 
 .socialIcons {
@@ -893,7 +940,7 @@ dl dd {
 }
 
 .userName {
-  font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
+  font-family: 'Source Sans Pro', 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
   color: black;
   font-size: 15px;
   padding-bottom: 10px;

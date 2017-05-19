@@ -1,8 +1,13 @@
 ---
-layout: post
+layout: codePost
 title:  "TODO app in Vanilla JS"
 date:   2017-05-18 00:00:00
 categories: general
+link: "<iframe height='400' scrolling='no' title='Vanilla Todo JS' src='//codepen.io/SrSandeepKumar/embed/gWddwr/?height=265&theme-id=0&default-tab=js,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'> See the Pen <a href='http://codepen.io/SrSandeepKumar/pen/gWddwr/'> Vanilla Todo JS</a> by Sandeep Kumar H R (<a href='http://codepen.io/SrSandeepKumar'>@SrSandeepKumar</a>) on <a href='http://codepen.io'>CodePen</a>. </iframe>"
 ---
 
-I am just getting started with documentation - i'll be updating this post soon.
+```javascript
+var s = "JavaScript syntax highlighting";
+alert(s);
+```
+

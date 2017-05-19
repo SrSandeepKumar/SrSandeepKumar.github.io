@@ -4,6 +4,7 @@
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="manifest" href="/manifest.json">
     <!--<link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>-->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/stylesheets/stylesheet.css" media="screen" />
@@ -19,14 +20,14 @@
       <div class="inner">
         <h1> {{ site.name }} </h1>
         <h2> {{ site.description }} </h2>
+        <center class="socialLinksContainer">
+          {% for data in site.social %}
+            <a href="{{ data.link }}">
+              <img class="socialIcons" src="{{ data.icon }}" />
+            </a>
+          {% endfor %}
+        </center>
       </div>
-      <center class="socialLinksContainer">
-        {% for data in site.social %}
-          <a href="{{ data.link }}">
-            <img class="socialIcons" src="{{ data.icon }}" />
-          </a>
-        {% endfor %}
-      </center>
     </header>
     <div id="content-wrapper">
       <div class="inner clearfix">
