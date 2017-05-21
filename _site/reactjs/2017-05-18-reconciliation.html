@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="manifest" href="/manifest.json">
+    <!--<link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>-->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/print.css" media="print" />
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <title> Reconciliation </title>
+  </head>
+  <body>
+    <header>
+      <div class="inner">
+        <h1> KnighTechie. </h1>
+        <h2> Tech Enthusiast.<br/> <span> Trying to contribute back to community.</span><br/> <span>For the Love of Code.</span> </h2>
+        <center class="socialLinksContainer">
+          
+            <a href="https://github.com/srsandeepkumar">
+              <img class="socialIcons" src="https://res.cloudinary.com/djgnze1er/image/upload/v1491932773/GitHub_Filled-500_sl3iek.png" alt="GitHub" />
+            </a>
+          
+            <a href="https://www.linkedin.com/in/infosandeep/">
+              <img class="socialIcons" src="https://res.cloudinary.com/djgnze1er/image/upload/v1491932786/LinkedIn-528_kul9pm.png" alt="LinkedIn" />
+            </a>
+          
+            <a href="https://twitter.com/SrSandeepKumar">
+              <img class="socialIcons" src="https://res.cloudinary.com/djgnze1er/image/upload/v1491932768/Twitter-528_iun6md.png" alt="Twitter" />
+            </a>
+          
+            <a href="https://www.youtube.com/channel/UC8aSVykuSWwTBX74lQsqyGw">
+              <img class="socialIcons" src="https://res.cloudinary.com/djgnze1er/image/upload/v1491932765/YouTube_2-528_lyg6av.png" alt="YouTube" />
+            </a>
+          
+        </center>
+      </div>
+    </header>
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h2> Reconciliation </h2>
+<p class="meta">01 Jan 2017</p>
+
+<h3 id="motivation">Motivation</h3>
+<hr />
+
+<p>Take for instance at a single point in time, you can think of <code class="highlighter-rouge">render()</code> as creating a tree of React-elements. On the next <strong>state / prop</strong> update, the <code class="highlighter-rouge">render()</code> with return a different tree of React-elements. React then needs to figure out how to efficiently update the UI to match the recent tree.</p>
+
+<blockquote>
+  <p>A survey on tree edit distance and related problem  - have a complexity in the order of <strong>O(n<sup>3</sup>)</strong>, where n is the number of elements in the tree.</p>
+</blockquote>
+
+<blockquote>
+  <p>if we used this un React, displaying 1000 elements would require in the order if <em>one billion</em> comparision.</p>
+</blockquote>
+
+<h4 id="react-implements-heuristic-on-based-on-2-assumptions">React implements heuristic <strong>O(n)</strong> based on 2 assumptions,</h4>
+<ol>
+  <li>Two elements of <strong>Different Type</strong> will produce different trees.</li>
+  <li>The developer can hint at which child elements may be stable across different renders with a <strong>key</strong> prop.</li>
+</ol>
+
+<h3 id="the-diffing-algorithm">The Diffing Algorithm</h3>
+<hr />
+
+<p>When diffing two trees, React first compares the two root elements. The behavior is different depending on the types of the root elements.</p>
+
+<h4 id="elements-of-different-types">Elements Of Different Types</h4>
+
+<p>Whenever the root elements have different types, React will tear down the old tree and build the new tree from scratch. Going from <code class="highlighter-rouge">&lt;a&gt;</code> to <code class="highlighter-rouge">&lt;img&gt;</code>, or from <code class="highlighter-rouge">&lt;Article&gt;</code> to <code class="highlighter-rouge">&lt;Comment&gt;</code>, or from <code class="highlighter-rouge">&lt;Button&gt;</code> to <code class="highlighter-rouge">&lt;div&gt;</code> - any of those will lead to a full rebuild.</p>
+
+<p>When tearing down a tree, old DOM nodes are destroyed. Component instances receive <code class="highlighter-rouge">componentWillUnmount()</code>. When building up a new tree, new DOM nodes are inserted into the DOM. Component instances receive <code class="highlighter-rouge">componentWillMount()</code> and then <code class="highlighter-rouge">componentDidMount()</code>. Any state associated with the old tree is lost.</p>
+
+<p>Any components below the root will also get unmounted and have their state destroyed. For example, when diffing:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;div&gt;</span>
+  <span class="nt">&lt;Counter</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;span&gt;</span>
+  <span class="nt">&lt;Counter</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/span&gt;</span>
+</code></pre>
+</div>
+
+<h4 id="dom-elements-of-the-same-type">DOM Elements Of The Same Type</h4>
+
+<p>When comparing two React DOM elements of the same type, React looks at the attributes of both, keeps the same underlying DOM node, and only updates the changed attributes. For example:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">className=</span><span class="s">"before"</span> <span class="na">title=</span><span class="s">"stuff"</span> <span class="nt">/&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">className=</span><span class="s">"after"</span> <span class="na">title=</span><span class="s">"stuff"</span> <span class="nt">/&gt;</span>
+</code></pre>
+</div>
+<p>By comparing these two elements, React knows to only modify the className on the underlying DOM node.
+When updating style, React also knows to update only the properties that changed. For example:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>    &lt;div style={ { color: "red", fontWeight: "bold" } } /&gt;
+
+    &lt;div style={ { color: "green", fontWeight: "bold" } } /&gt;
+</code></pre>
+</div>
+<p><em>When converting between these two elements, React knows to only modify the color style, not the fontWeight.
+After handling the DOM node, React then recurses on the children.
+This will destroy the old Counter and remount a new one.</em></p>
+
+<h4 id="component-elements-of-the-same-type">Component Elements Of The Same Type</h4>
+
+<p>When a component updates, the instance stays the same, so that state is maintained across renders. React updates the props of the underlying component instance to match the new element, and calls <code class="highlighter-rouge">componentWillReceiveProps()</code> and <code class="highlighter-rouge">componentWillUpdate()</code> on the underlying instance.</p>
+
+<p><em>Next, the <code class="highlighter-rouge">render()</code> method is called and the diff algorithm recurses on the previous result and the new result.</em></p>
+
+<h4 id="recursing-on-children">Recursing On Children</h4>
+
+<p>By default, when recursing on the children of a DOM node, React just iterates over both lists of children at the same time and generates a mutation whenever there’s a difference.</p>
+
+<p>For example, when adding an element at the end of the children, converting between these two trees works well:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;ul&gt;</span>
+  <span class="nt">&lt;li&gt;</span>first<span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;</span>second<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+
+<span class="nt">&lt;ul&gt;</span>
+  <span class="nt">&lt;li&gt;</span>first<span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;</span>second<span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;</span>third<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+</code></pre>
+</div>
+
+<p>React will match the two <code class="highlighter-rouge">&lt;li&gt;first&lt;/li&gt;</code> trees, match the two <code class="highlighter-rouge">&lt;li&gt;second&lt;/li&gt;</code> trees, and then insert the <code class="highlighter-rouge">&lt;li&gt;third&lt;/li&gt;</code> tree.
+If you implement it naively, inserting an element at the beginning has worse performance. For example, converting between these two trees works poorly:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;ul&gt;</span>
+  <span class="nt">&lt;li&gt;</span>Duke<span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;</span>Villanova<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+
+<span class="nt">&lt;ul&gt;</span>
+  <span class="nt">&lt;li&gt;</span>Connecticut<span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;</span>Duke<span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;</span>Villanova<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+</code></pre>
+</div>
+<p><em>React will mutate every child instead of realizing it can keep the <code class="highlighter-rouge">&lt;li&gt;Duke&lt;/li&gt;</code> and <code class="highlighter-rouge">&lt;li&gt;Villanova&lt;/li&gt;</code> subtrees intact. This inefficiency can be a problem.</em></p>
+
+<p><a href="https://facebook.github.io/react/docs/reconciliation.html">(Source - ReactJS Docs)</a></p>
+
+        </section>
+      </div>
+    </div>
+  </body>
+</html>

@@ -886,23 +886,29 @@ dl dd {
     border-bottom-color: #FF9800;
     border-left-color: #F44336;
   }
-  40% {
+  25% {
     border-right-color: #4CAF50;
     border-bottom-color: #FFEB3B;
     border-left-color: #FF9800;
     border-top-color: #F44336;
   }
-  80% {
+  50% {
     border-bottom-color: #4CAF50;
     border-left-color: #FFEB3B;
     border-top-color: #FF9800;
     border-right-color: #F44336;
   }
-  100% {
+  75% {
     border-left-color: #4CAF50;
     border-top-color: #FFEB3B;
     border-right-color: #FF9800;
     border-bottom-color: #F44336;
+  }
+  100% {
+    border-top-color: #4CAF50;
+    border-right-color: #FFEB3B;
+    border-bottom-color: #FF9800;
+    border-left-color: #F44336;
   }
 }
 
@@ -916,20 +922,21 @@ dl dd {
 .socialLinksContainer a {
   margin: 0px 5px;
   padding: 5px;
-  border-bottom: 1px solid #42A5F5;
+  border-bottom: 2px solid #42A5F5;
   animation: rotate 5s infinite alternate;
   -webkit-animation: rotate 5s infinite alternate;
 }
 
 .socialLinksContainer a:hover {
-  border-top: 1px solid;
-  border-right: 1px solid;
-  border-bottom: 1px solid;
-  border-left: 1px solid;
-  animation: rotate 2s infinite alternate;
-  -webkit-animation: rotate 2s infinite alternate;
+  border-color: red;
+  border-top: 2px solid;
+  border-right: 2px solid;
+  border-bottom: 2px solid;
+  border-left: 2px solid;
+  animation: rotate 3s infinite alternate;
+  -webkit-animation: rotate 3s infinite alternate;
   border-radius: 40px;
-  padding: 5px;
+  padding: 3px;
   transform: scale(1.3);
 }
 

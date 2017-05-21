@@ -5,3 +5,7 @@ layout: default
 <p class="meta">{{ page.date | date_to_string }}</p>
 {{ content }}
 {{ page.link }}
+source - 
+{% for data in page.source %}
+  <a href="{{ data.link }}">{{ data.title }}</a> {{ data.delimiter }}
+{% endfor %}

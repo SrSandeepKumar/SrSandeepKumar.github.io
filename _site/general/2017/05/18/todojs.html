@@ -23,19 +23,19 @@
         <center class="socialLinksContainer">
           
             <a href="https://github.com/srsandeepkumar">
-              <img class="socialIcons" src="https://res.cloudinary.com/djgnze1er/image/upload/v1491932773/GitHub_Filled-500_sl3iek.png" />
+              <img class="socialIcons" src="https://res.cloudinary.com/djgnze1er/image/upload/v1491932773/GitHub_Filled-500_sl3iek.png" alt="GitHub" />
             </a>
           
             <a href="https://www.linkedin.com/in/infosandeep/">
-              <img class="socialIcons" src="https://res.cloudinary.com/djgnze1er/image/upload/v1491932786/LinkedIn-528_kul9pm.png" />
+              <img class="socialIcons" src="https://res.cloudinary.com/djgnze1er/image/upload/v1491932786/LinkedIn-528_kul9pm.png" alt="LinkedIn" />
             </a>
           
             <a href="https://twitter.com/SrSandeepKumar">
-              <img class="socialIcons" src="https://res.cloudinary.com/djgnze1er/image/upload/v1491932768/Twitter-528_iun6md.png" />
+              <img class="socialIcons" src="https://res.cloudinary.com/djgnze1er/image/upload/v1491932768/Twitter-528_iun6md.png" alt="Twitter" />
             </a>
           
             <a href="https://www.youtube.com/channel/UC8aSVykuSWwTBX74lQsqyGw">
-              <img class="socialIcons" src="https://res.cloudinary.com/djgnze1er/image/upload/v1491932765/YouTube_2-528_lyg6av.png" />
+              <img class="socialIcons" src="https://res.cloudinary.com/djgnze1er/image/upload/v1491932765/YouTube_2-528_lyg6av.png" alt="YouTube" />
             </a>
           
         </center>
@@ -46,13 +46,139 @@
         <section id="main-content">
           <h2>TODO app in Vanilla JS</h2>
 <p class="meta">18 May 2017</p>
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">s</span> <span class="o">=</span> <span class="s2">"JavaScript syntax highlighting"</span><span class="p">;</span>
-<span class="nx">alert</span><span class="p">(</span><span class="nx">s</span><span class="p">);</span>
+<h3 id="topics">Topics</h3>
+<hr />
+<ol>
+  <li>Module Pattern - IIFE.</li>
+  <li>Closure.</li>
+  <li>Factory Function.</li>
+</ol>
+
+<h4 id="module-pattern---iife">Module Pattern - IIFE.</h4>
+<hr />
+
+<p>Modules are an integral piece of any robust application’s architecture and typically help in keeping the units of code for a project both cleanly separated and organized.</p>
+
+<p>What is a Design Pattern?</p>
+
+<blockquote>
+  <p>A design pattern is a reusable software solution</p>
+</blockquote>
+
+<p><em>Simply put, a design pattern is a reusable software solution to a specific type of problem that occurs frequently when developing software. Over the many years of practicing software development, experts have figured out ways of solving similar problems. These solutions have been encapsulated into design patterns.</em></p>
+
+<ul>
+  <li>patterns are proven solutions to software development problems</li>
+  <li>patterns are scalable as they usually are structured and have rules that you should follow</li>
+  <li>patterns are reusable for similar problems</li>
+</ul>
+
+<h5 id="categories-of-design-patterns">Categories of Design Patterns</h5>
+<hr />
+
+<ol>
+  <li><strong>Creational</strong> design patterns focus on ways to create objects or classes. This may sound simple (and it is in some cases), but large applications need to control the object creation process.
+    <ul>
+      <li>Builder Pattern.</li>
+      <li>Prototype Pattern.</li>
+    </ul>
+  </li>
+  <li><strong>Structural</strong> design patterns focus on ways to manage relationships between objects so that your application is architected in a scalable way. A key aspect of structural patterns is to ensure that a change in one part of your application does not affect all other parts.
+    <ul>
+      <li>Composite Pattern.</li>
+      <li>Facade Pattern.</li>
+    </ul>
+  </li>
+  <li><strong>Behavioral</strong> design patterns focus on communication between objects.
+    <ul>
+      <li>Observer Pattern.</li>
+      <li>Mediator Pattern.</li>
+    </ul>
+  </li>
+</ol>
+
+<p>Example for IIFE:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">Module</span> <span class="o">=</span> <span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+
+  <span class="kd">var</span> <span class="nx">privateMethod</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// some op...</span>
+  <span class="p">};</span>
+  
+  <span class="k">return</span> <span class="p">{</span>
+    <span class="na">publicMethodOne</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+      <span class="c1">// I can call `privateMethod()` you know...</span>
+    <span class="p">},</span>
+    <span class="na">publicMethodTwo</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+      <span class="c1">// I can call `privateMethod()` you know...</span>
+    <span class="p">},</span>
+    <span class="na">publicMethodThree</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+      <span class="c1">// I can call `privateMethod()` you know...</span>
+    <span class="p">}</span>
+  <span class="p">};</span>
+
+<span class="p">}());</span>
 </code></pre>
 </div>
 
+<h4 id="closure">Closure</h4>
+<hr />
+
+<p>Closures are functions that refer to independent (free) variables (variables that are used locally, but defined in an enclosing scope). In other words, these functions ‘remember’ the environment in which they were created.</p>
+
+<p>Example:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">counter</span> <span class="o">=</span> <span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">privateCounter</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="kd">function</span> <span class="nx">changeBy</span><span class="p">(</span><span class="nx">val</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">privateCounter</span> <span class="o">+=</span> <span class="nx">val</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="p">{</span>
+    <span class="na">increment</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+      <span class="nx">changeBy</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+    <span class="p">},</span>
+    <span class="na">decrement</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+      <span class="nx">changeBy</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+    <span class="p">},</span>
+    <span class="na">value</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="nx">privateCounter</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">};</span>   
+<span class="p">}());</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">counter</span><span class="p">.</span><span class="nx">value</span><span class="p">());</span> <span class="c1">// logs 0</span>
+<span class="nx">counter</span><span class="p">.</span><span class="nx">increment</span><span class="p">();</span>
+<span class="nx">counter</span><span class="p">.</span><span class="nx">increment</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">counter</span><span class="p">.</span><span class="nx">value</span><span class="p">());</span> <span class="c1">// logs 2</span>
+<span class="nx">counter</span><span class="p">.</span><span class="nx">decrement</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">counter</span><span class="p">.</span><span class="nx">value</span><span class="p">());</span> <span class="c1">// logs 1</span>
+</code></pre>
+</div>
+
+<h4 id="factory-function">Factory Function</h4>
+<hr />
+<p>In JavaScript, any function can return a new object. When it’s not a constructor function or class, it’s called a factory function.</p>
+
+<hr />
+
+<center> Code Snippet </center>
+
 
 <iframe height='400' scrolling='no' title='Vanilla Todo JS' src='//codepen.io/SrSandeepKumar/embed/gWddwr/?height=265&theme-id=0&default-tab=js,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'> See the Pen <a href='http://codepen.io/SrSandeepKumar/pen/gWddwr/'> Vanilla Todo JS</a> by Sandeep Kumar H R (<a href='http://codepen.io/SrSandeepKumar'>@SrSandeepKumar</a>) on <a href='http://codepen.io'>CodePen</a>. </iframe>
+source - 
+
+  <a href="https://toddmotto.com/mastering-the-module-pattern/">Module Pattern, </a> 
+
+  <a href="https://addyosmani.com/resources/essentialjsdesignpatterns/book/#modulepatternjavascript">Module, </a> 
+
+  <a href="http://stackoverflow.com/questions/22906662/javascript-design-pattern-difference-between-module-pattern-and-revealing-modul#answer-22918556">Module Pattern v/s Revealing Module Pattern, </a> 
+
+  <a href="https://code.tutsplus.com/tutorials/understanding-design-patterns-in-javascript--net-25930">Design Pattern, </a> 
+
+  <a href="https://medium.com/javascript-scene/javascript-factory-functions-vs-constructor-functions-vs-classes-2f22ceddf33e">Factory Function, </a> 
+
+  <a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Closures">Closures.</a> 
+
         </section>
       </div>
     </div>

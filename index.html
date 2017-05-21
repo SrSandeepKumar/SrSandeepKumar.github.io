@@ -4,15 +4,26 @@ title: Sandeep Kumar - Web Coder
 ---
 
 <div id="home">
-  <h1>Blog Posts</h1>
-  <ul class="posts">
-    {% for post in site.posts %}
-      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
-    {% endfor %}
-  </ul>
-  <h1> Slides </h1>
-  <ul>
-    <li><a href="html/serviceworkers.html"> Service Workers</a></li>
-  </ul>
-  <!--<h3> <a class="resume" href="/html/resume.pdf">Resume</a> </h3>-->
+  <article>
+    <h1>Blog Posts</h1>
+    <ul class="posts">
+      {% for post in site.posts %}
+        <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+      {% endfor %}
+    </ul>
+  </article>
+  <article>
+    <h1>ReactJS</h1>
+      <ul class="posts">
+      {% for post in site.reactjs %}
+        <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+      {% endfor %}
+    </ul>
+  </article>
+  <!--<article>
+    <h2> Slides </h1>
+    <ul>
+      <li><a href="html/serviceworkers.html"> Service Workers</a></li>
+    </ul>
+  </article>-->
 </div>
