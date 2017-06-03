@@ -11,6 +11,7 @@ const URLS_TO_CAHCE = [
   "https://fonts.googleapis.com/css?family=Source+Sans+Pro"
 ];
 
+// SW Registration
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', function() {
     navigator.serviceWorker.register('/serviceworker.js').then(function(registration) {
@@ -21,6 +22,7 @@ if ('serviceWorker' in navigator) {
   });
 }
 
+// SW Lifecycle - install
 self.addEventListener('install', function(event) {
   event.waitUntil(
     caches.open(CACHE_NAME).then(function(cache) {
@@ -31,10 +33,28 @@ self.addEventListener('install', function(event) {
   );
 });
 
+// SW Lifecycle - Fetch
 self.addEventListener('fetch', function (event) {
-  debugger;
-  console.log(event.request.url);
-  // event.respondWith(
-  //
-  // );
+  event.respondWith(
+    caches.match(event.request).then(function (response) {
+      if (response) {
+        console.log('Pulled in from cache');
+        return response;
+      }
+      var requestToFetch = event.request.clone();
+      fetch(requestToFetch).then(function (response) {
+        if (!response && response.status !== 200 && response.type !== 'basic') {
+          return response;
+        }
+        var responseToSend = response.clone();
+        caches.open(CACHE_NAME).then(function (cache) {
+          cache.put(requestToFetch, responseToSend);
+        });
+        console.log('pulled in from network');
+        return response;
+      }).catch(function (err) {
+        console.error('sw-fetch-stage failed to fetch a resorse ', err);
+      });
+    })
+  );
 });
