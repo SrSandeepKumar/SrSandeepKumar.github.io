@@ -1,4 +1,4 @@
-const CACHE_NAME = 'sk-v1';
+const CACHE_NAME = 'sk-v2';
 
 const URLS_TO_CAHCE = [
   "/stylesheets/stylesheet.css",
