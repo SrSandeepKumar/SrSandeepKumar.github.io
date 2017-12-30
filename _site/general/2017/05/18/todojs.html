@@ -99,7 +99,7 @@
 
 <p>Example for IIFE:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">Module</span> <span class="o">=</span> <span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">Module</span> <span class="o">=</span> <span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
 
   <span class="kd">var</span> <span class="nx">privateMethod</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
     <span class="c1">// some op...</span>
@@ -118,8 +118,7 @@
   <span class="p">};</span>
 
 <span class="p">}());</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h4 id="closure">Closure</h4>
 <hr />
@@ -128,7 +127,7 @@
 
 <p>Example:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">counter</span> <span class="o">=</span> <span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">counter</span> <span class="o">=</span> <span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
   <span class="kd">var</span> <span class="nx">privateCounter</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
   <span class="kd">function</span> <span class="nx">changeBy</span><span class="p">(</span><span class="nx">val</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">privateCounter</span> <span class="o">+=</span> <span class="nx">val</span><span class="p">;</span>
@@ -152,8 +151,7 @@
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">counter</span><span class="p">.</span><span class="nx">value</span><span class="p">());</span> <span class="c1">// logs 2</span>
 <span class="nx">counter</span><span class="p">.</span><span class="nx">decrement</span><span class="p">();</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">counter</span><span class="p">.</span><span class="nx">value</span><span class="p">());</span> <span class="c1">// logs 1</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h4 id="factory-function">Factory Function</h4>
 <hr />

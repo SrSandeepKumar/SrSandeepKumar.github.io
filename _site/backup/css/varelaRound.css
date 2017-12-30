@@ -1,9 +1,0 @@
-/* Varela Round - latin */
-@font-face {
-  font-family: 'Varela Round';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Varela Round'),
-       url('fonts/varela-round-v6-latin-regular.woff') format('woff'), /* Chrome 26+, Opera 23+ */
-       url('fonts/varela-round-v6-latin-regular.woff2') format('woff2'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
