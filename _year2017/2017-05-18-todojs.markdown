@@ -1,0 +1,129 @@
+---
+layout: codePost
+title:  "TODO app in Vanilla JS"
+date:   2017-05-18 00:00:00
+categories: general
+link: "<iframe height='400' scrolling='no' title='Vanilla Todo JS' src='//codepen.io/SrSandeepKumar/embed/gWddwr/?height=265&theme-id=0&default-tab=js,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'> See the Pen <a href='http://codepen.io/SrSandeepKumar/pen/gWddwr/'> Vanilla Todo JS</a> by Sandeep Kumar H R (<a href='http://codepen.io/SrSandeepKumar'>@SrSandeepKumar</a>) on <a href='http://codepen.io'>CodePen</a>. </iframe>"
+source: [{
+  title: "Module Pattern, ",
+  link: "https://toddmotto.com/mastering-the-module-pattern/",
+},{
+  title: "Module, ",
+  link: "https://addyosmani.com/resources/essentialjsdesignpatterns/book/#modulepatternjavascript",
+},{
+  title: "Module Pattern v/s Revealing Module Pattern, ",
+  link: "http://stackoverflow.com/questions/22906662/javascript-design-pattern-difference-between-module-pattern-and-revealing-modul#answer-22918556",
+},{
+  title: "Design Pattern, ",
+  link: "https://code.tutsplus.com/tutorials/understanding-design-patterns-in-javascript--net-25930",
+},{
+  title: "Factory Function, ",
+  link: "https://medium.com/javascript-scene/javascript-factory-functions-vs-constructor-functions-vs-classes-2f22ceddf33e",
+},{
+  title: "Closures.",
+  link: "https://developer.mozilla.org/en/docs/Web/JavaScript/Closures",
+}]
+---
+
+### Topics
+---------------------------------------------
+1. Module Pattern - IIFE.
+2. Closure.
+3. Factory Function.
+
+#### Module Pattern - IIFE.
+---------------------------------------------
+
+Modules are an integral piece of any robust application's architecture and typically help in keeping the units of code for a project both cleanly separated and organized.
+
+What is a Design Pattern?
+
+> A design pattern is a reusable software solution
+
+*Simply put, a design pattern is a reusable software solution to a specific type of problem that occurs frequently when developing software. Over the many years of practicing software development, experts have figured out ways of solving similar problems. These solutions have been encapsulated into design patterns.*
+
+* patterns are proven solutions to software development problems
+* patterns are scalable as they usually are structured and have rules that you should follow
+* patterns are reusable for similar problems
+
+##### Categories of Design Patterns
+---------------------------------------------
+
+1. **Creational** design patterns focus on ways to create objects or classes. This may sound simple (and it is in some cases), but large applications need to control the object creation process.
+  * Builder Pattern.
+  * Prototype Pattern.
+
+2. **Structural** design patterns focus on ways to manage relationships between objects so that your application is architected in a scalable way. A key aspect of structural patterns is to ensure that a change in one part of your application does not affect all other parts.
+  * Composite Pattern.
+  * Facade Pattern.
+
+3. **Behavioral** design patterns focus on communication between objects.
+  * Observer Pattern.
+  * Mediator Pattern.
+
+Example for IIFE: 
+
+```javascript
+var Module = (function () {
+
+  var privateMethod = function () {
+    // some op...
+  };
+  
+  return {
+    publicMethodOne: function () {
+      // I can call `privateMethod()` you know...
+    },
+    publicMethodTwo: function () {
+      // I can call `privateMethod()` you know...
+    },
+    publicMethodThree: function () {
+      // I can call `privateMethod()` you know...
+    }
+  };
+
+}());
+```
+
+#### Closure
+---------------------------------------------
+
+Closures are functions that refer to independent (free) variables (variables that are used locally, but defined in an enclosing scope). In other words, these functions 'remember' the environment in which they were created.
+
+Example:
+
+``` javascript
+var counter = (function() {
+  var privateCounter = 0;
+  function changeBy(val) {
+    privateCounter += val;
+  }
+  return {
+    increment: function() {
+      changeBy(1);
+    },
+    decrement: function() {
+      changeBy(-1);
+    },
+    value: function() {
+      return privateCounter;
+    }
+  };   
+}());
+
+console.log(counter.value()); // logs 0
+counter.increment();
+counter.increment();
+console.log(counter.value()); // logs 2
+counter.decrement();
+console.log(counter.value()); // logs 1
+```
+
+#### Factory Function
+---------------------------------------------
+In JavaScript, any function can return a new object. When it’s not a constructor function or class, it’s called a factory function.
+
+---------------------------------------------
+
+<center> Code Snippet </center>
+
