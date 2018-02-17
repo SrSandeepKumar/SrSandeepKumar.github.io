@@ -24,6 +24,9 @@ collections:
   reactjs:
     output: true
     permalink: /:collection/:name
+  year2018:
+    output: true
+    permalink: /:collection/:name
   year2017:
     output: true
     permalink: /:collection/:name

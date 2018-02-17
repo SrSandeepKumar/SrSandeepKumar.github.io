@@ -5,13 +5,21 @@ title: Sandeep Kumar - Web Coder
 
 <div id="home">
   <article>
+    <h1>Blog Posts</h1>
+    <ul class="posts">
+      {% for post in site.posts %}
+        <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+      {% endfor %}
+    </ul>
+  </article>
+  <!-- <article>
     <h1>2017</h1>
     <ul class="posts">
       {% for post in site.year2017 %}
         <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
       {% endfor %}
     </ul>
-  </article>
+  </article> -->
   <!-- <article>
     <h1>Blog Posts</h1>
     <ul class="posts">
@@ -20,14 +28,14 @@ title: Sandeep Kumar - Web Coder
       {% endfor %}
     </ul>
   </article> -->
-  <article>
+  <!-- <article>
     <h1>ReactJS</h1>
       <ul class="posts">
       {% for post in site.reactjs %}
         <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
       {% endfor %}
     </ul>
-  </article>
+  </article> -->
   <!-- <article>
     <h1> Slides </h1>
     <ul>
