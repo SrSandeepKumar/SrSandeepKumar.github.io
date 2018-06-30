@@ -1,9 +1,10 @@
-const CACHE_NAME = '1530360352311';
+const CACHE_NAME = '1530361019292';
 
 const URLS_TO_CAHCE = [
   '/stylesheets/stylesheet.css',
   '/images/header-bg.jpg',
   '/images/body-bg.jpg',
+  'images/pen.png',
   'https://res.cloudinary.com/djgnze1er/image/upload/v1491932773/GitHub_Filled-500_sl3iek.png',
   'https://res.cloudinary.com/djgnze1er/image/upload/v1491932786/LinkedIn-528_kul9pm.png',
   'https://res.cloudinary.com/djgnze1er/image/upload/v1491932768/Twitter-528_iun6md.png',
