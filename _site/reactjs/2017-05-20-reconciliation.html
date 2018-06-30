@@ -211,8 +211,29 @@ As a last resort, you can pass item’s index in the array as a key. This can wo
 <p>Source - <a href="https://facebook.github.io/react/docs/reconciliation.html">ReactJS Docs</a></p>
 
         </section>
+        <section class="knightsStuff hide">
+          <form class="userform" name="upload-form" id="upload-form" onsubmit="KNIGHTS.uploadForm()">
+            <div class="userformSection">
+              <label class="labels" for="name">Name: </label>
+              <input id="name" type="text" name="reader-name" />
+            </div>
+            <div class="userformSection">
+              <label class="labels" for="mail">Mail: </label>
+              <input id="mail" type="text" name="reader-mail" />
+            </div>
+            <div class="userformSection">
+              <label class="labels" for="message">Message: </label>
+              <textarea id="message" name="reader-message"></textarea>
+            </div>
+            <button onclick="KNIGHTS.uploadForm()" type="button">Go</button>
+          </form>
+        </section>
       </div>
     </div>
-    <script src="/serviceworker.js"></script>
+    <a href="#" class="floatBtn" onclick="KNIGHTS.toggleFeedback()">
+      <img style="padding: 20px;" src="/images/pen.png" alt="feeback knightechie" />
+    </a>
+    <script type="text/javascript" src="/knightechie.js" async></script>
+    <script type="text/javascript" src="/serviceworker.js" async></script>
   </body>
 </html>

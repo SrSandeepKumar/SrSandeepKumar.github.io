@@ -1,4 +1,4 @@
-const CACHE_NAME = 'sk-v2';
+const CACHE_NAME = '1530360352311';
 
 const URLS_TO_CAHCE = [
   '/stylesheets/stylesheet.css',
@@ -16,13 +16,13 @@ if ('serviceWorker' in navigator) {
   window.addEventListener ('load', function () {
     navigator.serviceWorker.register ('/serviceworker.js').then (
       function (registration) {
-        console.log (
+        console.log(
           'ServiceWorker registration successful with scope: ',
           registration.scope
         );
       },
       function (err) {
-        console.log ('ServiceWorker registration failed: ', err);
+        console.log('ServiceWorker registration failed: ', err);
       }
     );
   });
@@ -31,11 +31,11 @@ if ('serviceWorker' in navigator) {
 // SW Lifecycle - install
 self.addEventListener ('install', function (event) {
   event.waitUntil (
-    caches.open (CACHE_NAME).then (
-      function (cache) {
+    caches.open(CACHE_NAME).then(
+      function(cache) {
         return cache.addAll (URLS_TO_CAHCE);
       },
-      function (err) {
+      function(err) {
         console.error ('Failed to open the cache');
       }
     )
@@ -47,7 +47,7 @@ self.addEventListener ('fetch', function (event) {
   event.respondWith (
     caches.match (event.request).then (function (response) {
       if (response) {
-        console.log ('Pulled in from cache');
+        console.log('Pulled in from cache');
         return response;
       }
       var requestToFetch = event.request.clone ();
@@ -64,11 +64,11 @@ self.addEventListener ('fetch', function (event) {
           caches.open (CACHE_NAME).then (function (cache) {
             cache.put (requestToFetch, responseToSend);
           });
-          console.log ('pulled in from network');
+          console.log('pulled in from network');
           return response;
         })
         .catch (function (err) {
-          console.error ('sw-fetch-stage failed to fetch a resorse ', err);
+          console.error('sw-fetch-stage failed to fetch a resorse ', err);
         });
     })
   );

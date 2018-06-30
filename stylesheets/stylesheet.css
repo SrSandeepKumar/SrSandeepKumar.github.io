@@ -955,9 +955,93 @@ dl dd {
   text-align: center;
 }
 
+.error {
+  font-style: italic;
+  font-size: 12px;
+  color: #C62828;
+  text-align: right;
+}
+
+.labels {
+  width: 60px;
+}
+
+.knightsStuff {
+  right: 0;
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  margin: 0px auto;
+  left: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.userform {
+  background: none;
+  border-radius: 5px;
+  color: white;
+  background: #03A9F4;
+  border-radius: 5px;
+  border: 1px solid #03A9F4;
+  width: fit-content;
+  height: fit-content;
+}
+
+.userform button {
+  border: 1px solid;
+  background: #00796B;
+  border-radius: 5px;
+  height: 42px;
+  display: flex;
+  justify-content: center;
+  margin: 0% 10%;
+  width: 80%;
+}
+
+.userformSection {
+  margin: 10px;
+}
+
+.userformSection input, .userformSection textarea {
+  width: 400px;
+  resize: none;
+  border: 0px;
+  color: black;
+  padding: 5px;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.floatBtn{
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:40px;
+	right:40px;
+	background-color:#0C9;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+	box-shadow: 2px 2px 3px #999;
+}
+
+.my-float{
+	margin-top:22px;
+}
+
 @media only screen and (max-width: 780px) {
   .avatar {
     display: none;
+  }
+  .userformSection input, .userformSection textarea {
+    width: 200px;
   }
 }
 

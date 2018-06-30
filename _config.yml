@@ -2,6 +2,7 @@
 name: KnighTechie.
 tagline: Software Engineer - Coding Web.
 baseurl: ""
+customTag: "name of the article"
 description: Tech Enthusiast.<br/> <span> Trying to contribute back to community.</span><br/> <span>For the Love of Code.</span>
 social: [{
   link: "https://github.com/srsandeepkumar",
